@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= category %></title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+  <h1><%= category %></h1>
+  
+  <h3>
+    <% RESTAURANT.menu.forEach((item) => { %>
+        <% if (item.category === category) { %>
+            <table>
+                <tr>
+                
+                  <td>dish name <%=item.name %>  </td>
+                </tr>
+                <tr>
+                  
+                  <td>dish price <%=item.price %></td>
+                </tr>
+                <tr>
+                  
+                  <td> dish rating <%=item.rating %></td>
+                </tr>
+                <tr>
+                   
+                    <td> dish details <%=item.details %></td>
+                  </tr>
+              </table>
+          
+            <% } %>
+
+
+       <% }) %>
+  </h3>
+</body>
+</html>
